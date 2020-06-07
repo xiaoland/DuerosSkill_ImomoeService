@@ -10,10 +10,11 @@
 """
 from cgi import parse_qs, escape
 import json
-from index import handler
+from index import ImomoeAnime
 import sys
 # reload(sys)
 # sys.setdefaultencoding('utf-8')
+
 
 def application(environ, start_response):
     try:
@@ -25,7 +26,7 @@ def application(environ, start_response):
     if not request_body:
         return writeResponse(start_response,'未获取到请求数据')
 
-    bot = handler(request_body)
+    bot = ImomoeAnime(request_body)
     #添加错误回调方法
     # bot.setCallBack(callback)
 
@@ -37,6 +38,7 @@ def application(environ, start_response):
     body_str = bot.run()
     print(body_str)
     return writeResponse(start_response, body_str)
+
 
 def writeResponse(start_response, body_str):
 

@@ -230,10 +230,3 @@ class ImomoeAnime(Bot):
         意图处理-返回
         :return:
         """
-
-
-def handler(event, context=None):
-
-    bot = ImomoeAnime(event)
-    result = bot.run()
-    return result
