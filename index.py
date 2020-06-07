@@ -56,8 +56,8 @@ class ImomoeAnime(Bot):
         main_page = ImomoeClientMainPage()
 
         # 加载热门番剧
-        focus_list_template = ListTemplate3()
-        focus_list_template.set_title("热门")
+        # focus_list_template = ListTemplate3()
+        # focus_list_template.set_title("热门")
 
         focus_list = main_page.get_focus_list()
         for info in focus_list:
@@ -65,12 +65,13 @@ class ImomoeAnime(Bot):
             Item.set_image(info["img"])
             Item.set_plain_primary_text(info["title"])
             Item.set_plain_secondary_text(info["info"])
-            focus_list_template.add_item(Item)
-        template.add_item(focus_list_template)
+            template.add_item(Item)
+            # focus_list_template.add_item(Item)
+        # template.add_item(focus_list_template)
 
         # 加载最新番剧
-        latest_list_template = ListTemplate3()
-        latest_list_template.set_title("最新")
+        # latest_list_template = ListTemplate3()
+        # latest_list_template.set_title("最新")
 
         latest_list = main_page.get_latest_list()
         for info in latest_list:
@@ -78,12 +79,13 @@ class ImomoeAnime(Bot):
             Item.set_image(info["img"])
             Item.set_plain_primary_text(info["title"])
             Item.set_plain_secondary_text(info["info"])
-            latest_list_template.add_item(Item)
-        template.add_item(latest_list_template)
+            template.add_item(Item)
+            # latest_list_template.add_item(Item)
+        # template.add_item(latest_list_template)
 
         # 加载日本番剧
-        japanese_anime_list_template = ListTemplate3()
-        japanese_anime_list_template.set_title("日漫")
+        # japanese_anime_list_template = ListTemplate3()
+        # japanese_anime_list_template.set_title("日漫")
 
         japanese_anime_list = main_page.get_japan_anime_list()
         for info in japanese_anime_list:
@@ -91,8 +93,11 @@ class ImomoeAnime(Bot):
             Item.set_image(info["img"])
             Item.set_plain_primary_text(info["title"])
             Item.set_plain_secondary_text(info["info"])
-            japanese_anime_list_template.add_item(Item)
-        template.add_item(focus_list_template)
+            template.add_item(Item)
+            # japanese_anime_list_template.add_item(Item)
+        # template.add_item(focus_list_template)
+
+        return template
 
     def launch_handler(self):
 
@@ -105,7 +110,7 @@ class ImomoeAnime(Bot):
         template.set_title('樱花动漫-首页')
         template.set_background_image("http://dbp-resource.cdn.bcebos.com/a3b2b130-c212-2241-294f-e13597c9dcc9/WeChat%20Image_20200508190042.jpg")
 
-        self.load_main_page(template)
+        template = self.load_main_page(template)
 
         directive = RenderTemplate(template)
 

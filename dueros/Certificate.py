@@ -4,18 +4,18 @@
 # author:jack
 # create_time: 2018/1/3
 
-# import os
-# import fcntl
-# import hashlib
-# import OpenSSL
-# import urllib.request
-# from Crypto.PublicKey import RSA
-# from Crypto.Signature import PKCS1_v1_5
-# from Crypto.Hash import SHA
-# from base64 import b64encode, b64decode
-# from dueros.Base import Base
-# import ssl
-# ssl._create_default_https_context = ssl._create_unverified_context
+import os
+import fcntl
+import hashlib
+import OpenSSL
+import urllib.request
+from Crypto.PublicKey import RSA
+from Crypto.Signature import PKCS1_v1_5
+from Crypto.Hash import SHA
+from base64 import b64encode, b64decode
+from dueros.Base import Base
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 class Certificate(object):
