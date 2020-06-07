@@ -25,7 +25,7 @@ class ImomoeAnime(Bot):
         self.add_launch_handler(self.launch_handler)
         self.add_intent_handler('search', self.search_intent_handler)
 
-        self.add_intent_handler('previous', self.pervious_intent_handler)
+        self.add_intent_handler('previous', self.previous_intent_handlerr)
         self.add_intent_handler('next', self.next_intent_handler)
         self.add_intent_handler('choose_ep', self.choose_ep_intent_handler)
 
@@ -147,7 +147,7 @@ class ImomoeAnime(Bot):
             "outputSpeech": r"为您找到如下结果"
         }
 
-    def previous_intent_handler(self):
+    def previous_intent_handlerr(self):
         
         """
         意图处理-上n集
@@ -186,6 +186,48 @@ class ImomoeAnime(Bot):
 
         """
         意图处理-暂停播放
+        :return:
+        """
+
+    def resume_intent_handler(self):
+
+        """
+        意图处理-回复播放
+        :return:
+        """
+
+    def fast_forward_intent_handler(self):
+
+        """
+        意图处理-快进
+        :return:
+        """
+
+    def rewind_intent_handler(self):
+
+        """
+        意图处理-后退
+        :return:
+        """
+
+    def jump_to_intent_handler(self):
+
+        """
+        意图处理-跳转到
+        :return:
+        """
+
+    def list_choose_intent_handler(self):
+
+        """
+        意图处理-列表选择
+        :return:
+        """
+
+    def back_intent_handler(self):
+
+        """
+        意图处理-返回
         :return:
         """
 
