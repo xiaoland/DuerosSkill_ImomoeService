@@ -12,8 +12,8 @@ from cgi import parse_qs, escape
 import json
 from index import handler
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+# reload(sys)
+# sys.setdefaultencoding('utf-8')
 
 def application(environ, start_response):
     try:
