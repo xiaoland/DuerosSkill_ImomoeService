@@ -105,7 +105,7 @@ class ImomoeAnime(Bot):
         处理-打开技能
         :return:
         """
-
+        self.wait_answer()
         template = ListTemplate2()
         template.set_title('樱花动漫-首页')
         template.set_background_image("http://dbp-resource.cdn.bcebos.com/a3b2b130-c212-2241-294f-e13597c9dcc9/WeChat%20Image_20200508190042.jpg")
