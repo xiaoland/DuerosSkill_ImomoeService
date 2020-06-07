@@ -188,11 +188,9 @@ class ImomoeAnime(Bot):
         意图处理-暂停播放
         :return:
         """
-    
-        
 
 
-def handler(event, context):
+def handler(event, context=None):
 
     bot = ImomoeAnime(event)
     result = bot.run()
