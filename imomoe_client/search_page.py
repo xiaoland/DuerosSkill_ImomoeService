@@ -1,6 +1,6 @@
 # coding=utf-8
 import json
-import urllib
+import urllib.parse
 import requests
 from bs4 import BeautifulSoup as bs
 
@@ -21,7 +21,7 @@ class ImomoeClientSearchEngine(object):
         r = requests.post(self.base_url + "/search.asp",
                           data=json.dumps({"searchword": keyword}))
         soup = bs(r.content, "lxml")
-        keyword = urllib.urlencode(keyword.encode("gbk"))
+        keyword = urllib.parse.quote(keyword.encode("gbk"))
         r = requests.get("http://www.imomoe.in/search.asp" + "?searchword=" + keyword)
         soup = bs(r.content.decode("gbk"), "lxml")
         all_div = soup.select("div")
