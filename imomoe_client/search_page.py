@@ -32,6 +32,7 @@ class ImomoeClientSearchEngine(object):
             result = {}
             result["title"] = i.h2.a["title"]
             result["href"] = self.base_url + i.h2.a["href"]
+            result["img"] = i.img["src"]
             result["desc"] = i.p.string
             result["info"] = i.select("span")[1].string
             search_result_after.append(result)
