@@ -59,13 +59,13 @@ class ImomoeAnime(Bot):
         # focus_list_template = ListTemplate3()
         # focus_list_template.set_title("热门")
 
-        focus_list = main_page.get_focus_list()
-        for info in focus_list:
-            Item = ListTemplateItem()
-            Item.set_image(info["img"])
-            Item.set_plain_primary_text(info["title"])
-            Item.set_plain_secondary_text(info["info"])
-            template.add_item(Item)
+        # focus_list = main_page.get_focus_list()
+        # for info in focus_list:
+        #     Item = ListTemplateItem()
+        #     Item.set_image(info["img"])
+        #     Item.set_plain_primary_text(info["title"])
+        #     Item.set_plain_secondary_text(info["info"])
+        #     template.add_item(Item)
             # focus_list_template.add_item(Item)
         # template.add_item(focus_list_template)
 
@@ -105,7 +105,7 @@ class ImomoeAnime(Bot):
         处理-打开技能
         :return:
         """
-        self.wait_answer()
+        # self.wait_answer()
         template = ListTemplate2()
         template.set_title('樱花动漫-首页')
         template.set_background_image("http://dbp-resource.cdn.bcebos.com/a3b2b130-c212-2241-294f-e13597c9dcc9/WeChat%20Image_20200508190042.jpg")
@@ -125,8 +125,9 @@ class ImomoeAnime(Bot):
         意图处理-搜索
         :return:
         """
+        self.wait_answer()
         keyword = self.get_slots("keywords")
-        if not keyword:
+        if keyword is None or keyword == "":
             self.ask("keywords")
             return {
                 "outputSpeech": r"请问您要搜索什么？"

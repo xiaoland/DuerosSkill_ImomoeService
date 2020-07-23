@@ -5,7 +5,7 @@
 # create_time: 2018/1/3
 
 import os
-import fcntl
+# import fcntl
 import hashlib
 import OpenSSL
 import urllib.request
